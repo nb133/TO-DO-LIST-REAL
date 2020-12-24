@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body bgcolor="yellow">
+    <div class="navbar">MY APP</div>
+    <div class="header">
+        <marquee><h1>To Do List App</h1> </marquee>
+    <div class="my"><h2>Bonjour, This is a app for putting your work list after u have written what u want to write click on + button single click if on one of your list that you want to strike off and double click on your list if u want to remove it permanently</h2></div>
+    <div class="container">
+        <input id="inputField" type="text"><button id="addToDo">+</button>
+        <div class="to-dos" id="toDoContainer">
+            
+        
+        </div>
+  
+
+    <style>
+        html, body {
+    width: 50%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 360px;
+}
+
+#inputField {
+    width: 300px;
+    height: 46px;
+    border-width: 0;
+    border: 1px solid black;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+#addToDo {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    vertical-align: middle;
+    font-size: 30px;
+    background-image: url("Capture.PNG");
+}
+
+.paragraph-styling {
+    margin: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.to-dos {
+    margin-top: 25px;
+}
+div.my {
+    background-color:coral;
+    height: 300px;
+    widows: 500px;
+    
+}
+
+}
+body{
+    background-color: yellow;
+}
+ 
+header {
+    padding:70px;
+    text-align: center;
+   background-color:cornflowerblue;
+   background-image: url("Capture.PNG");
+
+    
+  }
+  .header h1 {
+    font-size: 40px;
+    color: black;
+  }
+  .navbar {
+    overflow: hidden;
+    background-color:green
+    
+  
+  }
+  
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: yellow;
+    text-align: center;
+    padding: 100px 100px;
+    text-decoration: none;
+  }
+  
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right;
+  }
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: red;
+    color: blue;
+  }
+  
+  /* Column container */
+  .row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+  }
+
+  
+    </style>
+    <script>
+        let addToDoButton = document.getElementById('addToDo');
+let toDoContainer = document.getElementById('toDoContainer');
+let inputField = document.getElementById('inputField');
+
+addToDoButton.addEventListener('click', function(){
+    var paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph-styling');
+    paragraph.innerText = inputField.value;
+    toDoContainer.appendChild(paragraph);
+    inputField.value = "";
+    paragraph.addEventListener('click', function(){
+        paragraph.style.textDecoration = "line-through";
+    })
+    paragraph.addEventListener('dblclick', function(){
+        toDoContainer.removeChild(paragraph);
+    })
+})
+    </script>
+</body>
+</html>
